@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <script>
+    // PLEASE DON'T change function name
+    var H=0, Q=0, D=0, N=0, P=0;
+makeExchange = function(currency) {
+    H=parseInt(currency/50);
+        if (currency <= 0) return {};
+        if (currency > 10000) return {error: "You are rich, my friend! We don't have so much coins for exchange"};
+        if ((H>=1)&&(currency%50)===0) return {"H": H};
+        if ((H>=1)&&(currency%50)!==0) {
+            currency=currency - H*50;
+            Q=parseInt(currency/25);
+            currency=currency - Q*25;
+            D=parseInt(currency/10);
+            currency=currency - D*10;
+            N=parseInt(currency/5);
+            currency=currency - N*10;
+            P=parseInt(currency);
+        }
+        
+    };
+    var s= makeExchange(249);
+    console.log(s);
+            console.log("H: "+H, ", Q: "+Q, ", D: " +D, ", N: "+N, ", P: " +P);
+</script>
+</body>
+</html>
