@@ -15,10 +15,10 @@ module.exports = function makeExchange(currency) {
           currency=currency - N*5;
           P=parseInt(currency);
     
-        if (H>0) amount["H"]=H;
-        if (Q>0) amount["Q"]=Q;
-        if (D>0) amount["D"]=D;
-        if (N>0) amount["N"]=N;
-        if (P>0) amount["P"]=P;
+        if (H) amount["H"]=H;
+        if (Q) amount["Q"]=Q;
+        if (D) amount["D"]=D;
+        if (N) amount["N"]=N;
+        if (P) amount["P"]=P;
         return amount;
 }
